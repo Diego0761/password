@@ -13,6 +13,11 @@ function App() {
     setPasswordLength(newValue as number)
   }
 
+  const handleSpecialChar = (value: boolean) => {
+    setUseSpecialChar(value)
+    console.log(value)
+  }
+
   const handleOption = (event: Event, newValue: number) => {}
 
   return (
@@ -40,7 +45,7 @@ function App() {
           </div>
 
           <div className="text-left mt-12">
-            <Option defaultValue={true} text="special characters?" />
+            <Option onValueChange={handleSpecialChar} defaultValue={true} text="special characters?" />
           </div>
         </div>
       </div>

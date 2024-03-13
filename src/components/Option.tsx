@@ -3,6 +3,7 @@ import { useState } from 'react'
 export type Props = {
   text: string
   defaultValue?: boolean
+  onValueChange: (value: boolean) => void
 }
 
 export function Option(props: Props) {
@@ -12,6 +13,7 @@ export function Option(props: Props) {
 
   const handleClick = (option: boolean) => {
     setValue(option)
+    props.onValueChange(option)
   }
 
   return (
